@@ -178,9 +178,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\EnrolmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReviewEnrolmentsController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -195,6 +197,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Enrolment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -278,8 +281,21 @@
     <Content Include="Views\Students\Details.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />
     <Content Include="Views\Enrolment\Index.cshtml" />
+    <Content Include="Views\ReviewEnrolments\Create.cshtml" />
+    <Content Include="Views\ReviewEnrolments\Delete.cshtml" />
+    <Content Include="Views\ReviewEnrolments\Details.cshtml" />
+    <Content Include="Views\ReviewEnrolments\Edit.cshtml" />
+    <Content Include="Views\ReviewEnrolments\Index.cshtml" />
+    <Content Include="Views\ReviewEnrolments\IndexAdmin.cshtml" />
+    <Content Include="Views\Courses\Create.cshtml" />
+    <Content Include="Views\Courses\Delete.cshtml" />
+    <Content Include="Views\Courses\Details.cshtml" />
+    <Content Include="Views\Courses\Edit.cshtml" />
+    <Content Include="Views\Courses\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\TestReview\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />

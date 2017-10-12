@@ -34,5 +34,7 @@ namespace MVCGroupE.Models
 
         public DbSet<Enrolment> Enrolments { get; set; }
         public object CheckingAccounts { get; internal set; }
+
+        public System.Data.Entity.DbSet<MVCGroupE.Models.Course> Courses { get; set; }
     }
 }

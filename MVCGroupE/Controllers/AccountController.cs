@@ -156,7 +156,7 @@ namespace MVCGroupE.Controllers
                 if (result.Succeeded)
                 {
                     var db = new ApplicationDbContext();
-                    var Students = new Students { SiD = model.SiD, Name = model.Name, Email = model.Email, Age = 0, Phone = 0, ApplicationUserId = user.Id };
+                    var Students = new Students { SiD = model.SiD, Name = model.Name, Email = model.Email, Age = model.Age, Phone = model.Phone, ApplicationUserId = user.Id };
                     db.Students.Add(Students);
                     db.SaveChanges();
 

@@ -10,9 +10,11 @@ namespace MVCGroupE.Models
     public class Students
     {
         [Key]
+        [Required]
+        [StringLength(10)]
+        [Column(TypeName = "varchar")]
         [Display(Name = "Student #")]
-        [RegularExpression(@"\d{5,10}", ErrorMessage = "Student # must between 5-10 numbers.")]
-        public int SiD { get; set; }
+        public string SiD { get; set; }
 
         [Required]
         [StringLength(30)]

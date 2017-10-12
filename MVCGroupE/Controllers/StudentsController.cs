@@ -4,11 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace MVCGroupE.Controllers
 {
     public class StudentsController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         // GET: Students
         public ActionResult Index()
         {
@@ -24,8 +27,9 @@ namespace MVCGroupE.Controllers
        // plave holder
         public ActionResult Details()
         {
-            var TestStudent = new Students { SiD = 0622254, Name = "Zef Sowman", Age = 28, Phone = 0278252227, Email = "Test.Gmail.com" };
-            return View(TestStudent);
+            var userId = User.Identity.GetUserId();
+            var checkingStudentId = db.Students.Where(c => c.ApplicationUserId == userId).First();
+            return View(checkingStudentId);
         }
 
 
