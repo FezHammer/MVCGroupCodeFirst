@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVCGroupE.Models;
+using Microsoft.AspNet.Identity;
 
 namespace MVCGroupE.Controllers
 {
@@ -24,6 +25,12 @@ namespace MVCGroupE.Controllers
                 courses = courses.Where(s => s.CategoryName.Contains(searchString) || s.CategoryName.Contains(searchString));
             }
             return View(courses.ToList());
+        }
+
+        public ViewResult Pathway()
+        {
+            var test = db.Courses.SqlQuery("SELECT CourseName FROM Courses as c INNER JOIN Enrolments as e ON c.PrerequisiteId = e.CourseID where e.Grade > 50 UNION SELECT CourseName FROM Courses where PrerequisiteId is null and[Year] = 2 UNION SELECT CourseName FROM Courses where PrerequisiteId is null and[Year] = 3").ToList();
+            return View(test);
         }
         // GET: Courses/Details/5
         public ActionResult Details(string id)
