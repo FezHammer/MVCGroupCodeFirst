@@ -24,7 +24,7 @@ namespace MVCGroupE.Models
         [Column(TypeName = "varchar")]
         public string Description { get; set; }
 
-        public int semester { get; set; }
+        public int Semester { get; set; }
 
         [Display(Name = "Catergory")]
         [StringLength(32)]

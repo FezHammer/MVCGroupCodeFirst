@@ -15,11 +15,16 @@ namespace MVCGroupE.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Courses
-        public ActionResult Index()
+        public ViewResult Index(string searchString)
         {
-            return View(db.Courses.ToList());
+            var courses = from s in db.Courses
+                          select s;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                courses = courses.Where(s => s.CategoryName.Contains(searchString) || s.CategoryName.Contains(searchString));
+            }
+            return View(courses.ToList());
         }
-
         // GET: Courses/Details/5
         public ActionResult Details(string id)
         {
