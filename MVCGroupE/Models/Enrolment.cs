@@ -13,7 +13,9 @@ namespace MVCGroupE.Models
         [Required]
         public int EnrollId { get; set; }
 
-        [Required]
+        [StringLength(10)]
+        [Column(TypeName = "varchar")]
+        [Display(Name = "Student #")]
         public string SiD { get; set; }
         public virtual Students Students { get; set; }
 

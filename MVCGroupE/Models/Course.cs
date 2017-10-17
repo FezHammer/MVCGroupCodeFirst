@@ -42,5 +42,8 @@ namespace MVCGroupE.Models
 
         public virtual ICollection<Enrolment> Enrolment { get; set; }
 
+        public virtual ICollection<LabHistory> LabHistory { get; set; }
+
+
     }
 }
