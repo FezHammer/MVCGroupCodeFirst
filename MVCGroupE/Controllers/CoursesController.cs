@@ -30,6 +30,7 @@ namespace MVCGroupE.Controllers
         public ViewResult Pathway()
         {
             var test = db.Courses.SqlQuery("SELECT CourseName FROM Courses as c INNER JOIN Enrolments as e ON c.PrerequisiteId = e.CourseID where e.Grade > 50 UNION SELECT CourseName FROM Courses where PrerequisiteId is null and[Year] = 2 UNION SELECT CourseName FROM Courses where PrerequisiteId is null and[Year] = 3").ToList();
+
             return View(test);
         }
         // GET: Courses/Details/5
