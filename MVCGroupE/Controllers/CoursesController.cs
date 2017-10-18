@@ -29,10 +29,12 @@ namespace MVCGroupE.Controllers
 
         public ViewResult Pathway()
         {
-            var test = db.Courses.SqlQuery("SELECT CourseName FROM Courses as c INNER JOIN Enrolments as e ON c.PrerequisiteId = e.CourseID where e.Grade > 50 UNION SELECT CourseName FROM Courses where PrerequisiteId is null and[Year] = 2 UNION SELECT CourseName FROM Courses where PrerequisiteId is null and[Year] = 3").ToList();
-
+            var test = db.Database.SqlQuery <MVCGroupE.Models.Course> ("SELECT * FROM Courses as c INNER JOIN Enrolments as e ON c.PrerequisiteId = e.CourseID where e.Grade > 50 ");
+            
             return View(test);
         }
+
+        //"SELECT CourseName FROM Courses as c INNER JOIN Enrolments as e ON c.PrerequisiteId = e.CourseID where e.Grade > 50 UNION SELECT CourseName FROM Courses where PrerequisiteId is null and[Year] = 2 UNION SELECT CourseName FROM Courses where PrerequisiteId is null and[Year] = 3"
         // GET: Courses/Details/5
         public ActionResult Details(string id)
         {
