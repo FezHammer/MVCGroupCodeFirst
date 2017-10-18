@@ -29,7 +29,7 @@ namespace MVCGroupE.Controllers
 
         public ViewResult Pathway()
         {
-            var test = db.Database.SqlQuery <MVCGroupE.Models.Course> ("SELECT * FROM Courses as c INNER JOIN Enrolments as e ON c.PrerequisiteId = e.CourseID where e.Grade > 50 ");
+            var test = db.Database.SqlQuery <Course> ("SELECT * FROM Courses as c INNER JOIN Enrolments as e ON c.PrerequisiteId = e.CourseID where e.Grade > 50 ");
             
             return View(test);
         }
