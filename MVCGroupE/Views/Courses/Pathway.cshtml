@@ -1,7 +1,9 @@
 ﻿@model IEnumerable<MVCGroupE.Models.Course>
+@using Microsoft.AspNet.Identity;
 
 @{
     ViewBag.Title = "Pathway";
+    var userId = User.Identity.GetUserName();
 }
 
 <h2>Pathway</h2>
@@ -27,6 +29,7 @@
     </tr>
 
 @foreach (var item in Model) {
+ 
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.CourseName)
