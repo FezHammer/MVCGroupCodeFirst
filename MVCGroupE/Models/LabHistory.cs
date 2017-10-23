@@ -13,22 +13,25 @@ namespace MVCGroupE.Models
         [Key]
         public int LabId { get; set; }
 
+        [Display(Name = "Course Name")]
         [Required]
         [StringLength(4)]
         [Column(TypeName = "varchar")]
         public string CourseId { get; set; }
         public virtual Course Course { get; set; }
 
+        [Display(Name = "Student #")]
         [Required]
         [StringLength(10)]
         [Column(TypeName = "varchar")]
-        [Display(Name = "Student #")]
         public string SiD { get; set; }
         public virtual Students Students { get; set; }
 
         [StringLength(10)]
-        [Column(TypeName = "varchar")]
+        
         [Display(Name = "Date of Lab")]
+        [DataType(DataType.Date)]
+        [DisplayFormatAttribute(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public string LabDate { get; set; }
 
         public bool Attended { get; set; }

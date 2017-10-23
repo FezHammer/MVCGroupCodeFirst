@@ -31,15 +31,24 @@ namespace MVCGroupE.Controllers
         {
             string userId = User.Identity.GetUserName();
             userId = "'" + userId + "'";
-            var test = db.Database.SqlQuery<Course>("SELECT * FROM Courses as c INNER JOIN Enrolments as e ON c.PrerequisiteId = e.CourseID INNER JOIN Students as s ON s.[Sid] = e.[Sid]  where e.Grade > 50 AND s.Email =" + userId);
+            var Result = db.Database.SqlQuery<Course>("SELECT * FROM Courses as c INNER JOIN Enrolments as e ON c.PrerequisiteId = e.CourseID INNER JOIN Students as s ON s.[Sid] = e.[Sid]  where e.Grade > 50 AND s.Email =" + userId);
  
 
-            return View(test);
+            return View(Result);
             
         }
 
-        //"SELECT CourseName FROM Courses as c INNER JOIN Enrolments as e ON c.PrerequisiteId = e.CourseID where e.Grade > 50 UNION SELECT CourseName FROM Courses where PrerequisiteId is null and[Year] = 2 UNION SELECT CourseName FROM Courses where PrerequisiteId is null and[Year] = 3"
-        // GET: Courses/Details/5
+        [Authorize]
+        public ViewResult PathwayAdmin()
+        {
+            
+            var ResulltAdmin = db.Database.SqlQuery<Course>("SELECT * FROM Courses as c INNER JOIN Enrolments as e ON c.PrerequisiteId = e.CourseID INNER JOIN Students as s ON s.[Sid] = e.[Sid]  where e.Grade > 50");
+
+            return View(ResulltAdmin);
+
+        }
+
+     
         public ActionResult Details(string id)
         {
             if (id == null)

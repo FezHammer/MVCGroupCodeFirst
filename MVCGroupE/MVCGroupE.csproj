@@ -181,6 +181,7 @@
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\EnrolmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LabHistoriesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ReviewEnrolmentsController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
@@ -294,6 +295,12 @@
     <Content Include="Views\Courses\Edit.cshtml" />
     <Content Include="Views\Courses\Index.cshtml" />
     <Content Include="Views\Courses\Pathway.cshtml" />
+    <Content Include="Views\Courses\PathwayAdmin.cshtml" />
+    <Content Include="Views\LabHistories\Create.cshtml" />
+    <Content Include="Views\LabHistories\Delete.cshtml" />
+    <Content Include="Views\LabHistories\Details.cshtml" />
+    <Content Include="Views\LabHistories\Edit.cshtml" />
+    <Content Include="Views\LabHistories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\TestReview\" />

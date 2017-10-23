@@ -15,7 +15,7 @@ namespace MVCGroupE.Models
         [Column(TypeName = "varchar")]
         public string CourseId { get; set; }
 
-        [Display(Name = "Name")]
+        [Display(Name = "Course Name")]
         [StringLength(32)]
         [Column(TypeName = "varchar")]
         public String CourseName { get; set; }
