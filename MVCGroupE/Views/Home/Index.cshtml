@@ -11,34 +11,28 @@
 <div class="row">
     <div class="col-md-4">
         <h2>View user information</h2>
-        <p>
-            
-        </p>
-        <p><a class="btn btn-default" href=@Url.Action("Details", "Students")> Students &raquo;</a></p>
+        <p><a class="btn btn-default" href=@Url.Action("Details", "Students")> View &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Enter Results</h2>
-        <p></p>
+        <h2>Enter course Results</h2>
 
-        <p><a class="btn btn-default" href="@Url.Action("Index", "Enrolment", new {studentAccountId = ViewBag.StudentAccountId } )">Enrol &raquo;</a></p>
+        <p><a class="btn btn-default" href="@Url.Action("Index", "Enrolment", new {studentAccountId = ViewBag.StudentAccountId } )">Enter &raquo;</a></p>
         <h2>Review Results(student)</h2>
         <p><a class="btn btn-default" href="@Url.Action("Index", "ReviewEnrolments" )">Review &raquo;</a></p>
         <h2>View Results(admin)</h2>
         <p><a class="btn btn-default" href="@Url.Action("IndexAdmin", "ReviewEnrolments" )">Review &raquo;</a></p>
     </div>
         <div class="col-md-4">
-            <h2>Courses</h2>
-            <p></p>
-            <p><a class="btn btn-default" href="@Url.Action("Index", "Courses" )">View &raquo;</a></p>
+            <h2>View all Courses</h2>
+            <p><a class="btn btn-default" href="@Url.Action("Index", "Courses" )">Courses &raquo;</a></p>
             <h2>View aviable furture courses</h2>
-            <p><a class="btn btn-default" href="@Url.Action("Pathway", "Courses" )">Review &raquo;</a></p>
+            <p><a class="btn btn-default" href="@Url.Action("Pathway", "Courses" )">Pathway &raquo;</a></p>
            
         </div>
 
 
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>View Attendance report</h2>
+        <p><a class="btn btn-default" href="@Url.Action("Index", "LabHistories" )">Attendance &raquo;</a></p>
     </div>
 </div>

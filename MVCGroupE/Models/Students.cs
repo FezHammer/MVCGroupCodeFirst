@@ -18,6 +18,7 @@ namespace MVCGroupE.Models
 
         [Required]
         [StringLength(30)]
+        [Display(Name = "Student Name")]
         [Column(TypeName = "varchar")]
         public string Name { get; set; }
 
