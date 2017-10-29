@@ -183,6 +183,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LabHistoriesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NewEnrolmentsController.cs" />
     <Compile Include="Controllers\ReviewEnrolmentsController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -302,6 +303,11 @@
     <Content Include="Views\LabHistories\Details.cshtml" />
     <Content Include="Views\LabHistories\Edit.cshtml" />
     <Content Include="Views\LabHistories\Index.cshtml" />
+    <Content Include="Views\NewEnrolments\Create.cshtml" />
+    <Content Include="Views\NewEnrolments\Delete.cshtml" />
+    <Content Include="Views\NewEnrolments\Details.cshtml" />
+    <Content Include="Views\NewEnrolments\Edit.cshtml" />
+    <Content Include="Views\NewEnrolments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\TestReview\" />
