@@ -179,7 +179,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
-    <Compile Include="Controllers\EnrolmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LabHistoriesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -284,7 +283,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Students\Details.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />
-    <Content Include="Views\Enrolment\Index.cshtml" />
     <Content Include="Views\ReviewEnrolments\Create.cshtml" />
     <Content Include="Views\ReviewEnrolments\Delete.cshtml" />
     <Content Include="Views\ReviewEnrolments\Details.cshtml" />

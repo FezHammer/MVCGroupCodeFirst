@@ -1,7 +1,10 @@
 ﻿@model IEnumerable<MVCGroupE.Models.Enrolment>
+@using Microsoft.AspNet.Identity;
 
 @{
     ViewBag.Title = "Index";
+    var userId = User.Identity.GetUserId();
+   
 }
 
 <h2>Index</h2>
@@ -29,29 +32,34 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Course.CourseName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Students.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EnrolmentYear)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EnrolmentSemester)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Grade)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EnrollId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EnrollId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EnrollId })
-        </td>
-    </tr>
+@foreach (var item in Model)
+{
+    if (item.Students.ApplicationUserId == userId)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Students.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrolmentYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrolmentSemester)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.EnrollId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.EnrollId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.EnrollId })
+            </td>
+        </tr>
+    }
+
 }
 
 </table>

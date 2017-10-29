@@ -13,6 +13,7 @@ namespace MVCGroupE.Controllers
 {
     public class NewEnrolmentsController : Controller
     {
+       
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: NewEnrolments
@@ -52,9 +53,9 @@ namespace MVCGroupE.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "EnrollId,SiD,CourseId,EnrolmentYear,EnrolmentSemester,Grade")] Enrolment enrolment)
         {
-
             var userId = User.Identity.GetUserId();
             var checkingStudentId = db.Students.Where(c => c.ApplicationUserId == userId).First().SiD;
+
 
             if (ModelState.IsValid)
             {
@@ -93,8 +94,13 @@ namespace MVCGroupE.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "EnrollId,SiD,CourseId,EnrolmentYear,EnrolmentSemester,Grade")] Enrolment enrolment)
         {
+            var userId = User.Identity.GetUserId();
+            var checkingStudentId = db.Students.Where(c => c.ApplicationUserId == userId).First().SiD;
+
+
             if (ModelState.IsValid)
             {
+                enrolment.SiD = checkingStudentId;
                 db.Entry(enrolment).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

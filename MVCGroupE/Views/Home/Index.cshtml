@@ -15,10 +15,9 @@
     </div>
     <div class="col-md-4">
         <h2>Enter course Results</h2>
-
-        <p><a class="btn btn-default" href="@Url.Action("Index", "Enrolment", new {studentAccountId = ViewBag.StudentAccountId } )">Enter &raquo;</a></p>
+        <p><a class="btn btn-default" href="@Url.Action("Create", "NewEnrolments" )">Enter &raquo;</a></p>
         <h2>Review Results(student)</h2>
-        <p><a class="btn btn-default" href="@Url.Action("Index", "ReviewEnrolments" )">Review &raquo;</a></p>
+        <p><a class="btn btn-default" href="@Url.Action("Index", "NewEnrolments" )">View &raquo;</a></p>
         <h2>View Results(admin)</h2>
         <p><a class="btn btn-default" href="@Url.Action("IndexAdmin", "ReviewEnrolments" )">Review &raquo;</a></p>
     </div>
