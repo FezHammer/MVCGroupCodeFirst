@@ -20,7 +20,7 @@ namespace MVCGroupE.Models
         [Column(TypeName = "varchar")]
         public String CourseName { get; set; }
 
-        [StringLength(100)]
+        [StringLength(1000)]
         [Column(TypeName = "varchar")]
         public string Description { get; set; }
 
