@@ -15,9 +15,13 @@ namespace MVCGroupE.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: LabHistories
-        public ActionResult Index()
+        public ActionResult Index(string HistSearch)
         {
             var labHistories = db.LabHistories.Include(l => l.Course).Include(l => l.Students);
+            if (!string.IsNullOrEmpty(HistSearch))
+            {
+                labHistories = labHistories.Where(s => s.Course.CourseName.Contains(HistSearch) || s.Course.CourseName.Contains(HistSearch));
+            }
             return View(labHistories.ToList());
         }
 

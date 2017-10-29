@@ -5,11 +5,18 @@
 }
 
 <h2>Index</h2>
-
+@using (Html.BeginForm())
+{
+    <p>
+        Find by Class: @Html.TextBox("HistSearch")
+        <input type="submit" value="Search" />
+    </p>
+}
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
+
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Course.CourseName)
