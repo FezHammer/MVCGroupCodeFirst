@@ -22,3 +22,35 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.social-nav li{
+    list-style: none;
+    margin: 0 4px;
+    display: inline-block;  
+}
+
+.social-nav.social-nav-footer{
+    text-align: center;
+}
+
+*.icon{
+    color: #033c73;
+}
+
+.contact-nav{
+    list-style: none;
+    padding: 0 2px;
+    color: #193980;
+    text-align: center;
+}
+
+.contact-nav li{
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.pfooter{
+    padding-top: 5px;
+    text-align: center;
+    color: #193980;
+}

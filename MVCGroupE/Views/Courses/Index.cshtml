@@ -10,11 +10,11 @@
 {
     <p>
         Find by Category Name: @Html.TextBox("SearchString")
-        <input type="submit" value="Search" />
+        <input type="submit" value="Search" class="btn btn-info btn-sm"/>
     </p>
 }
 <table class="table">
-    <tr>
+    <tr class="info">
         <th>
             @Html.DisplayNameFor(model => model.CourseName)
         </th>

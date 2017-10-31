@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Software Process ASP.Net Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -32,10 +32,43 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - UCOL Assignment 2</p>
-        </footer>
+        <ul class="social-nav social-nav-footer">
+            <li>
+                <a href="https://www.facebook.com/UCOLNZ/" target="_blank" title="Facebook">
+                    <i class="fa fa-facebook-square fa-2x icon" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/ucolnz" target="_blank" title="Twitter">
+                    <i class="fa fa-twitter-square fa-2x icon" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/user/UCOLonline" target="_blank" title="YouTube">
+                    <i class="fa fa-youtube-square fa-2x icon" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/ucolnz/" target="_blank" title="Instagram">
+                    <i class="fa fa-instagram fa-2x icon" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/edu/school?id=15524" target="_blank" title="LinkedIn">
+                    <i class="fa fa-linkedin-square fa-2x icon" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+        <br>
+        <ul class="contact-nav">
+            <li>Corner King and Princess St, Palmerston North 4442 | </li>
+            <li>0800 468 265 | </li>
+            <li>+64 6 952 7000</li>
+        </ul>
     </div>
+    <p class="pfooter">
+        <b>&copy; @DateTime.Now.Year - Software Process Group Assignment</b>
+    </p>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

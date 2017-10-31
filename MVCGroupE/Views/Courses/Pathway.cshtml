@@ -12,7 +12,7 @@
     @*@Html.ActionLink("Create New", "Create")*@
 </p>
 <table class="table">
-    <tr>
+    <tr class="info">
         <th>
             @Html.DisplayNameFor(model => model.CourseName)
         </th>      
@@ -25,7 +25,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Compulsory)
         </th>
-        
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -43,7 +43,7 @@
         </td>       
         <td>
             @Html.DisplayFor(modelItem => item.Compulsory)
-        
+        </td> 
         <td>
             @*@Html.ActionLink("Edit", "Edit", new { id=item.CourseId }) |*@
             @Html.ActionLink("Details", "Details", new { id=item.CourseId })
