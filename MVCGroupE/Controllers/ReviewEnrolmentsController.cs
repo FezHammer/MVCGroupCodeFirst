@@ -20,13 +20,16 @@ namespace MVCGroupE.Controllers
         public ActionResult Index()
         {
             var enrolments = db.Enrolments.Include(e => e.Course).Include(e => e.Students);
-
             return View(enrolments.ToList());
         }
-        public ActionResult IndexAdmin()
+        public ActionResult IndexAdmin(string AdminSearch)
         {
             var enrolments = db.Enrolments.Include(e => e.Course).Include(e => e.Students);
 
+            if (!string.IsNullOrEmpty(AdminSearch))
+            {
+                enrolments = enrolments.Where(s => s.Course.CourseName.Contains(AdminSearch) || s.Course.CourseName.Contains(AdminSearch));
+            }
             return View(enrolments.ToList());
         }
 

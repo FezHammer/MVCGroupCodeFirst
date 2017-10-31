@@ -11,9 +11,14 @@
 
 <h2>Index</h2>
     @Html.ActionLink("Create New", "Create")
-<p>
-    
-</p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by Category Name: @Html.TextBox("AdminSearch")
+        <input type="submit" value="Search" />
+    </p>
+}
 <table class="table">
     <tr>
         <th>
