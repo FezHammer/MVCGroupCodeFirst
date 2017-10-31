@@ -9,8 +9,12 @@
 @using (Html.BeginForm())
 {
     <p>
-        Find by Category Name: @Html.TextBox("SearchString")
-        <input type="submit" value="Search" class="btn btn-info btn-sm"/>
+        Find by Course Name: @Html.TextBox("Search2")
+        <input type="submit" value="Search" class="btn btn-info btn-sm" />
+        <span class="search-button">
+            Find by Category Name: @Html.TextBox("SearchString")
+            <input type="submit" value="Search" class="btn btn-info btn-sm" />
+        </span>
     </p>
 }
 <table class="table">
