@@ -17,9 +17,13 @@ namespace MVCGroupE.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: NewEnrolments
-        public ActionResult Index()
+        public ActionResult Index(string UserSearch)
         {
             var enrolments = db.Enrolments.Include(e => e.Course).Include(e => e.Students);
+            if (!string.IsNullOrEmpty(UserSearch))
+            {
+                enrolments = enrolments.Where(s => s.Course.CourseName.Contains(UserSearch) || s.Course.CourseName.Contains(UserSearch));
+            }
             return View(enrolments.ToList());
         }
 

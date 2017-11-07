@@ -17,18 +17,27 @@ namespace MVCGroupE.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: ReviewEnrolments
-        public ActionResult Index()
+        public ActionResult Index( string UserSearch)
         {
             var enrolments = db.Enrolments.Include(e => e.Course).Include(e => e.Students);
             return View(enrolments.ToList());
+
+            if (!string.IsNullOrEmpty(UserSearch))
+            {
+                enrolments = enrolments.Where(s => s.Course.CourseName.Contains(UserSearch) || s.Course.CourseName.Contains(UserSearch));
+            }
         }
-        public ActionResult IndexAdmin(string AdminSearch)
+        public ActionResult IndexAdmin(string AdminSearch, string AdminSearchName)
         {
             var enrolments = db.Enrolments.Include(e => e.Course).Include(e => e.Students);
 
             if (!string.IsNullOrEmpty(AdminSearch))
             {
                 enrolments = enrolments.Where(s => s.Course.CourseName.Contains(AdminSearch) || s.Course.CourseName.Contains(AdminSearch));
+            }
+            if (!string.IsNullOrEmpty(AdminSearchName))
+            {
+                enrolments = enrolments.Where(s => s.Students.Name.Contains(AdminSearchName) || s.Students.Name.Contains(AdminSearchName));
             }
             return View(enrolments.ToList());
         }
