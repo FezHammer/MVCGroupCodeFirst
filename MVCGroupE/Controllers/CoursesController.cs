@@ -35,7 +35,7 @@ namespace MVCGroupE.Controllers
         {
             string userId = User.Identity.GetUserName();
             userId = "'" + userId + "'";
-            var Result = db.Database.SqlQuery<Course>("SELECT * FROM Courses as c INNER JOIN Enrolments as e ON c.PrerequisiteId = e.CourseID INNER JOIN Students as s ON s.[Sid] = e.[Sid]  where e.Grade > 50 AND s.Email =" + userId)
+            var Result = db.Database.SqlQuery<Course>("SELECT * FROM Courses as c INNER JOIN Enrolments as e ON c.PrerequisiteId = e.CourseID INNER JOIN Students as s ON s.[Sid] = e.[Sid]  where e.Grade > 50 AND s.Email =" + userId);
 
 
             return View(Result);
