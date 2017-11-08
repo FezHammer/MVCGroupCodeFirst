@@ -22,10 +22,10 @@ namespace MVCGroupE.Controllers
             var enrolments = db.Enrolments.Include(e => e.Course).Include(e => e.Students);
             return View(enrolments.ToList());
 
-            if (!string.IsNullOrEmpty(UserSearch))
-            {
-                enrolments = enrolments.Where(s => s.Course.CourseName.Contains(UserSearch) || s.Course.CourseName.Contains(UserSearch));
-            }
+            //if (!string.IsNullOrEmpty(UserSearch))
+            //{
+            //    enrolments = enrolments.Where(s => s.Course.CourseName.Contains(UserSearch) || s.Course.CourseName.Contains(UserSearch));
+            //}
         }
         public ActionResult IndexAdmin(string AdminSearch, string AdminSearchName)
         {

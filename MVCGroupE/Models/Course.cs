@@ -44,6 +44,8 @@ namespace MVCGroupE.Models
 
         public virtual ICollection<LabHistory> LabHistory { get; set; }
 
+        public virtual ICollection<FurtureClasses> furtureClasses { get; set; }
+
 
     }
 }

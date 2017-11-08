@@ -8,6 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using MVCGroupE.Models;
 using Microsoft.AspNet.Identity;
+using System.Drawing;
+
+
 
 namespace MVCGroupE.Controllers
 {

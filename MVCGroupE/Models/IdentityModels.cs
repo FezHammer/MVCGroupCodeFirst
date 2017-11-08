@@ -38,5 +38,7 @@ namespace MVCGroupE.Models
         public System.Data.Entity.DbSet<MVCGroupE.Models.Course> Courses { get; set; }
 
         public System.Data.Entity.DbSet<MVCGroupE.Models.LabHistory> LabHistories { get; set; }
+
+        public System.Data.Entity.DbSet<MVCGroupE.Models.FurtureClasses> FurtureClasses { get; set; }
     }
 }
