@@ -2,14 +2,17 @@
 @using Microsoft.AspNet.Identity;
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Index";<br>
     var userId = User.Identity.GetUserId();
 }
+<div>
+    @Html.ActionLink("Add Courses to Plan", "Create")<br>
+   
+    <a href="@Url.Action("DownloadPdf","FurtureClasses")"> View as PDF</a>
 
-<p></p>
-<p>
-    @Html.ActionLink("Add Courses to Plan", "Create")
-</p>
+</div>
+   
+
 
 <h2>Bict Year One Courses</h2>
 <table class="table">
@@ -29,9 +32,8 @@
 
 @foreach (var item in Model)
 {
-    if (item.Course.Year == 1)
-    {
-        if (item.Students.ApplicationUserId == userId)
+    
+        if (item.Students.ApplicationUserId == userId & item.Course.Year == 1)
         {
             <tr>
                 <td>
@@ -49,101 +51,84 @@
                     @Html.ActionLink("Delete", "Delete", new { id = item.FurtureCourseID })
                 </td>
             </tr>
-        }
+
 
     }
+
+
+   
 
 }
-    </table>
-<h2>Bict Year Two Courses</h2>
-<table class="table">
+    <tr>
+        <td>
+            <h2>Bict Year Two Courses</h2>
+        </td>
+   </tr>
+@foreach (var item in Model)
+{
+
+    if (item.Students.ApplicationUserId == userId & item.Course.Year == 2)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Semester)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.FurtureCourseID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.FurtureCourseID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.FurtureCourseID })
+            </td>
+        </tr>
+
+
+    }
+
+
+
+
+}
+    <tr>
+        <td>
+            <h2>Bict Year Three Courses</h2>
+        </td>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        if (item.Students.ApplicationUserId == userId & item.Course.Year == 3)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.CourseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Semester)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.FurtureCourseID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.FurtureCourseID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.FurtureCourseID })
+                </td>
+            </tr>
+
+
+        }
+
+
+
+
+    }
     
-    <tr>
-        <th>
-            <p></p>
-            @Html.DisplayNameFor(model => model.Course.CourseName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Year)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Semester)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        if (item.Course.Year == 2)
-        {
-            if (item.Students.ApplicationUserId == userId)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Course.CourseName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Year)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Semester)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.FurtureCourseID }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.FurtureCourseID }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.FurtureCourseID })
-                    </td>
-                </tr>
-            }
-
-        }
-
-    }
-</table>
-<h2>Bict Year Three Courses</h2>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Course.CourseName)
-        </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.Year)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Semester)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        if (item.Course.Year == 3)
-        {
-            if (item.Students.ApplicationUserId == userId)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Course.CourseName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Year)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Semester)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.FurtureCourseID }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.FurtureCourseID }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.FurtureCourseID })
-                    </td>
-                </tr>
-            }
-
-        }
-
-    }
 </table>
 
 
-<a href="@Url.Action("DownloadPdf","FurtureClasses")"> Download PDF</a>
+
